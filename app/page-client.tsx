@@ -76,7 +76,7 @@ export default function Home() {
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 will-change-transform"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 hidden sm:flex flex-col items-center gap-2 will-change-transform"
         >
           <span className="text-xs text-neutral-500 uppercase tracking-widest font-semibold">Descubra</span>
           <motion.div 
