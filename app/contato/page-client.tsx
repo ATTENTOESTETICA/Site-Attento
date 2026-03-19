@@ -22,7 +22,7 @@ export default function ContatoPage() {
             <div className="space-y-6">
               {[
                 { icon: <Mail className="text-brand-orange" />, label: "E-mail", value: "attento@attentoestetica.com.br", url: "mailto:attento@attentoestetica.com.br", isLink: true },
-                { icon: <Phone className="text-brand-orange" />, label: "WhatsApp", value: "+55 61 9165-3813", url: "https://wa.me/556191653813", isLink: true },
+                { icon: <Phone className="text-brand-orange" />, label: "WhatsApp", value: "+55 61 99165-3813", url: "https://wa.me/5561991653813", isLink: true },
                 { icon: <Clock className="text-brand-orange" />, label: "Horários", value: "Seg - Sex: 08:00 às 18:00", isLink: false },
                 { 
                   icon: <MapPin className="text-brand-orange" />, 

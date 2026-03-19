@@ -33,7 +33,7 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0 z-10 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
 
         {/* Transição suave em degradê da Hero para o Preto */}
-        <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black via-black/90 to-transparent z-20"></div>
+        <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black via-black/90 to-transparent z-[25]"></div>
 
         <motion.div 
           variants={revealUp}
@@ -66,7 +66,7 @@ export default function Home() {
             </Link>
             
             <Link href="/servicos" className="flex items-center justify-center bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-white/20 text-white px-12 py-6 rounded-2xl text-xl md:text-2xl font-bold transition-all w-full sm:w-auto">
-              Ver Nossos Projetos
+              Ver Nossos Serviços
             </Link>
           </div>
         </motion.div>
@@ -189,7 +189,7 @@ export default function Home() {
           {[
             { tag: "Etapa 1", title: "Diagnóstico Clínico", desc: "Mapeamos o veículo para identificar riscos e contaminações ocultas do dia a dia.", icon: <ScanLine className="w-16 h-16 text-brand-orange shadow-sm" /> },
             { tag: "Etapa 2", title: "Descontaminação Absoluta", desc: "Limpeza minuciosa das superfícies e rodas removendo impurezas que a lavagem normal não atinge.", icon: <Droplets className="w-16 h-16 text-neutral-400" /> },
-            { tag: "Etapa 3", title: "Correção & Lapidação", desc: "Polimento em múltiplas etapas nivelando o verniz à perfeição sem falhas.", icon: <div className="w-3/4 h-2 bg-gradient-to-r from-neutral-800 via-brand-orange to-neutral-800 rounded-full my-auto" /> },
+            { tag: "Etapa 3", title: "Correção & Lapidação", desc: "Polimento em múltiplas etapas nivelando o verniz à perfeição sem falhas.", icon: <Wand2 className="w-16 h-16 text-brand-orange shadow-sm" /> },
             { tag: "Etapa 4", title: "Blindagem Master", desc: "Instalação do PPF ou Vitrificador Cerâmico para garantir o selamento total do brilho.", icon: <ShieldCheck className="w-16 h-16 text-brand-orange shadow-sm" /> },
           ].map((item, i) => (
             <motion.div key={i} variants={revealUp} className="group bg-white/[0.02] backdrop-blur-md border border-white/[0.05] rounded-[2rem] p-12 hover:bg-white/[0.04] hover:border-brand-orange/30 transition-all duration-500 flex flex-col justify-between shadow-xl relative overflow-hidden will-change-[transform,opacity]">
