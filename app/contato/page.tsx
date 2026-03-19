@@ -3,7 +3,7 @@ import ContatoClient from './page-client';
 
 export const metadata: Metadata = {
   title: 'Contato | Agende uma Avaliação na Attento',
-  description: 'Agende uma avaliação com os especialistas da Attento. Estúdios premium em Brasília (Aeroporto) prontos para receber o seu carro.',
+  description: 'Fale com os especialistas da Attento. Oferecemos estética automotiva premium em Brasília, Goiânia, Ribeirão Preto e Campinas. Agende sua avaliação!',
   alternates: {
     canonical: '/contato',
   }

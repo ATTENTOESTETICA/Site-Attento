@@ -188,7 +188,7 @@ export default function Home() {
         <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 will-change-[transform,opacity]">
           {[
             { tag: "Etapa 1", title: "Diagnóstico Clínico", desc: "Mapeamos o veículo para identificar riscos e contaminações ocultas do dia a dia.", icon: <ScanLine className="w-16 h-16 text-brand-orange shadow-sm" /> },
-            { tag: "Etapa 2", title: "Descontaminação Absoluta", desc: "Limpeza minuciosa das superfícies e rodas removendo impurezas que a lavagem normal não atinge.", icon: <Droplets className="w-16 h-16 text-neutral-400" /> },
+            { tag: "Etapa 2", title: "Descontaminação Absoluta", desc: "Limpeza minuciosa das superfícies e rodas removendo impurezas que a lavagem normal não atinge.", icon: <Droplets className="w-16 h-16 text-brand-orange shadow-sm" /> },
             { tag: "Etapa 3", title: "Correção & Lapidação", desc: "Polimento em múltiplas etapas nivelando o verniz à perfeição sem falhas.", icon: <Wand2 className="w-16 h-16 text-brand-orange shadow-sm" /> },
             { tag: "Etapa 4", title: "Blindagem Master", desc: "Instalação do PPF ou Vitrificador Cerâmico para garantir o selamento total do brilho.", icon: <ShieldCheck className="w-16 h-16 text-brand-orange shadow-sm" /> },
           ].map((item, i) => (

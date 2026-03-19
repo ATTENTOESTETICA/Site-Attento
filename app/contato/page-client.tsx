@@ -1,9 +1,96 @@
 "use client";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Phone, MapPin, Clock, Mail } from "lucide-react";
 import FAQ from "@/components/FAQ";
 
 export default function ContatoPage() {
+  const [selectedCity, setSelectedCity] = useState("brasilia");
+
+  const cities = [
+    { 
+      id: "brasilia", 
+      name: "Brasília",
+      addresses: [
+        { 
+          icon: <MapPin className="text-brand-orange" />, 
+          label: "Studio BMW (Brasília)", 
+          value: "EPAR - Antigo Terminal 2 - Aeroporto Internacional - Lago Sul, Brasília - DF, 71608-900", 
+          url: "https://maps.google.com/?q=EPAR+-+Antigo+Terminal+2+-+Aeroporto+Internacional+-+Lago+Sul,+Brasília+-+DF,+71608-900", 
+          isLink: true 
+        },
+        { 
+          icon: <MapPin className="text-brand-orange" />, 
+          label: "Studio PORSCHE (Brasília)", 
+          value: "Aeroporto internacional Juscelino Kubitschek, DF 047, Lote 04 - Lago Sul, Brasília - DF, 71608-900", 
+          url: "https://maps.google.com/?q=Aeroporto+internacional+Juscelino+Kubitschek,+DF+047,+Lote+04+-+Lago+Sul,+Brasília+-+DF,+71608-900", 
+          isLink: true 
+        },
+      ]
+    },
+    {
+      id: "goiania",
+      name: "Goiânia",
+      addresses: [
+        {
+          icon: <MapPin className="text-brand-orange" />,
+          label: "Studio PORSCHE (Goiânia)",
+          value: "Av. Alphaville Flamboyant, 01 - 3755 Quadra 05 - Lote - Alphaville Flamboyant, Goiânia - GO, 74884-527",
+          url: "https://maps.google.com/?q=Av.+Alphaville+Flamboyant,+01+-+3755+Quadra+05+-+Lote+-+Alphaville+Flamboyant,+Goiânia+-+GO,+74884-527",
+          isLink: true
+        }
+      ]
+    },
+    {
+      id: "ribeirao-preto",
+      name: "Ribeirão Preto",
+      addresses: [
+        {
+          icon: <MapPin className="text-brand-orange" />,
+          label: "BMW CARROS (Ribeirão Preto)",
+          value: "Av. Wladimir Meirelles Ferreira, 1600 - Jardim Botânico, Ribeirão Preto - SP, 14021-630",
+          url: "https://maps.google.com/?q=Av.+Wladimir+Meirelles+Ferreira,+1600+-+Jardim+Botânico,+Ribeirão+Preto+-+SP,+14021-630",
+          isLink: true
+        },
+        {
+          icon: <MapPin className="text-brand-orange" />,
+          label: "BMW MOTOS (Ribeirão Preto)",
+          value: "Av. Wladimir Meirelles Ferreira, 1500 - Jardim Botânico, Ribeirão Preto - SP, 14021-630",
+          url: "https://maps.google.com/?q=Av.+Wladimir+Meirelles+Ferreira,+1500+-+Jardim+Botânico,+Ribeirão+Preto+-+SP,+14021-630",
+          isLink: true
+        }
+      ]
+    },
+    {
+      id: "campinas",
+      name: "Campinas",
+      addresses: [
+        {
+          icon: <MapPin className="text-brand-orange" />,
+          label: "BMW CARROS (Campinas)",
+          value: "Av. Júlio de Mesquita, 694 - Cambuí, Campinas - SP, 13025-060",
+          url: "https://maps.google.com/?q=Av.+Júlio+de+Mesquita,+694+-+Cambuí,+Campinas+-+SP,+13025-060",
+          isLink: true
+        },
+        {
+          icon: <MapPin className="text-brand-orange" />,
+          label: "BMW MOTOS (Campinas)",
+          value: "R. Carolina Florence, 437 - Vila Nova, Campinas - SP, 13073-225",
+          url: "https://maps.google.com/?q=R.+Carolina+Florence,+437+-+Vila+Nova,+Campinas+-+SP,+13073-225",
+          isLink: true
+        }
+      ]
+    }
+  ];
+
+  const contactInfo = [
+    { icon: <Mail className="text-brand-orange" />, label: "E-mail", value: "attento@attentoestetica.com.br", url: "mailto:attento@attentoestetica.com.br", isLink: true },
+    { icon: <Phone className="text-brand-orange" />, label: "WhatsApp", value: "+55 61 99165-3813", url: "https://wa.me/5561991653813", isLink: true },
+    { icon: <Clock className="text-brand-orange" />, label: "Horários", value: "Seg - Sex: 08:00 às 18:00", isLink: false },
+  ];
+
+  const currentCity = cities.find(c => c.id === selectedCity) || cities[0];
+
   return (
     <div className="min-h-screen pt-24 bg-black relative">
       <div className="pointer-events-none absolute inset-0 z-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
@@ -20,25 +107,7 @@ export default function ContatoPage() {
             </p>
 
             <div className="space-y-6">
-              {[
-                { icon: <Mail className="text-brand-orange" />, label: "E-mail", value: "attento@attentoestetica.com.br", url: "mailto:attento@attentoestetica.com.br", isLink: true },
-                { icon: <Phone className="text-brand-orange" />, label: "WhatsApp", value: "+55 61 99165-3813", url: "https://wa.me/5561991653813", isLink: true },
-                { icon: <Clock className="text-brand-orange" />, label: "Horários", value: "Seg - Sex: 08:00 às 18:00", isLink: false },
-                { 
-                  icon: <MapPin className="text-brand-orange" />, 
-                  label: "Studio BMW (Brasília)", 
-                  value: "EPAR - Antigo Terminal 2 - Aeroporto Internacional - Lago Sul, Brasília - DF, 71608-900", 
-                  url: "https://maps.google.com/?q=EPAR+-+Antigo+Terminal+2+-+Aeroporto+Internacional+-+Lago+Sul,+Brasília+-+DF,+71608-900", 
-                  isLink: true 
-                },
-                { 
-                  icon: <MapPin className="text-brand-orange" />, 
-                  label: "Studio PORSCHE (Brasília)", 
-                  value: "Aeroporto internacional Juscelino Kubitschek, DF 047, Lote 04 - Lago Sul, Brasília - DF, 71608-900", 
-                  url: "https://maps.google.com/?q=Aeroporto+internacional+Juscelino+Kubitschek,+DF+047,+Lote+04+-+Lago+Sul,+Brasília+-+DF,+71608-900", 
-                  isLink: true 
-                },
-              ].map((item, i) => (
+              {contactInfo.map((item, i) => (
                 <div key={i} className="group flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-white/[0.02] backdrop-blur-md p-6 rounded-[2rem] border border-white/5 shadow-lg hover:bg-white/[0.04] transition-all duration-300">
                   <div className="bg-black border border-white/10 p-5 rounded-2xl group-hover:scale-[1.05] transition-transform duration-300 shadow-md flex-shrink-0 will-change-transform">
                     {item.icon}
@@ -55,6 +124,53 @@ export default function ContatoPage() {
                   </div>
                 </div>
               ))}
+
+              {/* City Selection Tabs */}
+              <div className="pt-8 pb-4">
+                <p className="text-xs font-bold text-neutral-400 uppercase tracking-[0.2em] mb-6 px-2">Nossas Unidades</p>
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {cities.map((city) => (
+                    <button
+                      key={city.id}
+                      onClick={() => setSelectedCity(city.id)}
+                      className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                        selectedCity === city.id
+                          ? "bg-brand-orange text-white shadow-[0_5px_15px_rgba(255,107,0,0.3)]"
+                          : "bg-white/5 text-neutral-400 hover:bg-white/10 border border-white/5"
+                      }`}
+                    >
+                      {city.name}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="space-y-4">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={selectedCity}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.3 }}
+                      className="space-y-4"
+                    >
+                      {currentCity.addresses.map((item, i) => (
+                        <div key={i} className="group flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-white/[0.02] backdrop-blur-md p-6 rounded-[2rem] border border-white/5 shadow-lg hover:bg-white/[0.04] transition-all duration-300">
+                          <div className="bg-black border border-white/10 p-5 rounded-2xl group-hover:scale-[1.05] transition-transform duration-300 shadow-md flex-shrink-0 will-change-transform">
+                            {item.icon}
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-xs text-brand-orange font-bold uppercase tracking-[0.2em] mb-1.5">{item.label}</p>
+                            <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-lg md:text-xl font-medium text-neutral-200 hover:text-white transition-colors block leading-snug">
+                              {item.value}
+                            </a>
+                          </div>
+                        </div>
+                      ))}
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -75,7 +191,7 @@ export default function ContatoPage() {
               className="flex justify-center mb-10 relative z-10 will-change-transform"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.png" alt="Attento Form Logo" className="h-24 md:h-28 lg:h-32 object-contain opacity-90 shadow-sm" />
+              <img src="/logo.png" alt="Attento Estética Automotiva Premium" className="h-24 md:h-28 lg:h-32 object-contain opacity-90 shadow-sm" />
             </motion.div>
 
             <form className="space-y-8 relative z-10" onSubmit={(e) => { e.preventDefault(); alert('Em desenvolvimento!'); }}>
