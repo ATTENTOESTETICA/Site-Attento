@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"] });
 
@@ -53,6 +54,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </SmoothScroll>
+        <SpeedInsights />
       </body>
     </html>
   );
